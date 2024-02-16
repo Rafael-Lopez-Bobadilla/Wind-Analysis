@@ -2,9 +2,8 @@
   <Head>
     <Title>Wind Analysis</Title>
   </Head>
-  <div class="m-[50px]">
-    Hola
-  </div>
+  <Form />
+  <Charts />
 </template>
 
 <style>
