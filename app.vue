@@ -1,9 +1,12 @@
+<script setup lang="ts">
+const data = useState('data')
+</script>
 <template>
   <Head>
     <Title>Wind Analysis</Title>
   </Head>
   <Form />
-  <Charts />
+  <Charts v-if="data" />
 </template>
 
 <style>
