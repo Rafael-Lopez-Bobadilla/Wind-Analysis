@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Data } from '~/utils/DataTypes.ts'
 const formValues = useState('formValues', () => {
   return {
     lat: '',
@@ -8,16 +9,17 @@ const formValues = useState('formValues', () => {
     turbine: ''
   }
 })
-const data = useState('data', () => null)
+const hourlyData = useState<Data | null>('hourlyData', () => null)
 const selectError = useState('selectError', () => false)
-const onSubmit = (e: Event) => {
+const onSubmit = async (e: Event) => {
   e.preventDefault()
   if (formValues.value.turbine === '') {
     selectError.value = true
     return
   }
   const params = new URLSearchParams(formValues.value)
-  setData(data, params)
+  const data = await getData(params)
+  hourlyData.value = data
 }
 </script>
 

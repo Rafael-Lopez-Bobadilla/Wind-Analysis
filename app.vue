@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const data = useState('data')
+const data: globalThis.Ref<Data | null> = useState('hourlyData')
 </script>
 <template>
   <Head>
