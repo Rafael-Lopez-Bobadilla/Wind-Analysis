@@ -21,7 +21,7 @@ const chartConfig = computed(() => {
 })
 const handleChange = async (type: string) => {
   const params = new URLSearchParams(formValues.value as any)
-  if (type === 'Monthly') {
+  if (type === 'Monthly Average') {
     if (!monthlyData.value) {
       params.set('mean', 'month')
       const data = await getData(params)
@@ -29,7 +29,7 @@ const handleChange = async (type: string) => {
     }
     dataType.value = 'Monthly'
   }
-  if (type === 'Daily') {
+  if (type === 'Daily Average') {
     if (!dailyData.value) {
       params.set('mean', 'day')
       const data = await getData(params)

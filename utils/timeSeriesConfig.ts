@@ -15,13 +15,13 @@ const timeSeriesConfig = (values: Data | null) => {
         buttons: [
           {
             count: 1,
-            label: '1 month',
+            label: '1 Month',
             step: 'month',
             stepmode: 'backward'
           },
           {
             count: 6,
-            label: '6 months',
+            label: '6 Months',
             step: 'month',
             stepmode: 'backward'
           },
