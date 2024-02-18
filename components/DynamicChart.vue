@@ -44,7 +44,7 @@ const handleChange = async (type: string) => {
 </script>
 
 <template>
-  <DataSelect @type-change="handleChange" />
+  <DataSelect @type-change="handleChange" :type="type" />
   <nuxt-plotly :data="chartConfig!.data" :layout="chartConfig!.layout">
   </nuxt-plotly>
 </template>
