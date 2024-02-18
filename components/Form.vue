@@ -11,6 +11,7 @@ const formValues = useState('formValues', () => {
 })
 const hourlyData = useState<Data | null>('hourlyData', () => null)
 const selectError = useState('selectError', () => false)
+const loadingCharts = useState('loadingCharts')
 const onSubmit = async (e: Event) => {
   e.preventDefault()
   if (formValues.value.turbine === '') {
@@ -18,7 +19,9 @@ const onSubmit = async (e: Event) => {
     return
   }
   const params = new URLSearchParams(formValues.value)
+  loadingCharts.value = true
   const data = await getData(params)
+  loadingCharts.value = false
   hourlyData.value = data
 }
 </script>
