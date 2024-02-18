@@ -6,8 +6,8 @@ const props = defineProps<{
 }>()
 const formValues: globalThis.Ref<FormValues> = useState('formValues')
 const hourlyData: globalThis.Ref<Data | null> = useState('hourlyData')
-const dailyData = useState<Data | null>('dailyData', () => null)
-const monthlyData = useState<Data | null>('monthlyData', () => null)
+const dailyData = useState<Data | null>('dailyData')
+const monthlyData = useState<Data | null>('monthlyData')
 const dataType = ref('Hourly')
 const chartConfig = computed(() => {
   let config: { data: NuxtPlotlyData, layout: NuxtPlotlyLayout } | null = null

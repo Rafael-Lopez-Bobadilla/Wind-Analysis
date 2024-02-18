@@ -10,6 +10,8 @@ const formValues = useState('formValues', () => {
   }
 })
 const hourlyData = useState<Data | null>('hourlyData', () => null)
+const dailyData = useState<Data | null>('dailyData', () => null)
+const monthlyData = useState<Data | null>('monthlyData', () => null)
 const selectError = useState('selectError', () => false)
 const loadingCharts = useState('loadingCharts')
 const onSubmit = async (e: Event) => {
@@ -20,6 +22,8 @@ const onSubmit = async (e: Event) => {
   }
   const params = new URLSearchParams(formValues.value)
   loadingCharts.value = true
+  dailyData.value = null
+  monthlyData.value = null
   const data = await getData(params)
   loadingCharts.value = false
   hourlyData.value = data
